@@ -1,0 +1,38 @@
+
+<!doctype html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Debt Calculator App</title>
+  	<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css" /> -->
+  	<!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
+  	<link href="css/debtliftstyle.css" rel="stylesheet" />
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">Debt Calculator</div>
+    <div class="menu">
+    <br><br>
+    <a href="https://dev.studiozandra.com">go to dev.studiozandra</a> </div>
+    <div class="content">Enter your repayment data below:
+    <p><b>Loan Amount</b>: <input type="text" id="inAmount"/></p>
+  <p><b>Down Payment</b>: <input type="text" id="inDownP"/></p>
+  <p><b>APR (Interest rate)</b>: <input type="text" id="inAPR"/></p>
+  <p><b>Time Period (How many years)</b>: <input type="text" id="inPeriod"/></p>
+  <p><button id="btnCalculate">Calculate Payment!</button></p>
+  <hr/>
+
+  <p><b>Total Monthly Payment: <span id="outMonthly"></span></b></p>
+  <script src="js/debtlift-calc.js"></script>
+
+    </div>
+    <div class="footer">Copyright <a href="https://studiozandra.com">Zandra Kubota</a> 2018<br>
+  </div>
+  </div>
+</body>
+</html>

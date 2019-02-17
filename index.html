@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <head>
@@ -20,15 +19,28 @@
     <br><br>
     <a href="https://dev.studiozandra.com">go to dev.studiozandra</a> </div>
     <div class="content">Enter your repayment data below:
-    <p><b>Loan Amount</b>: <input type="text" id="inAmount"/></p>
-  <p><b>Down Payment</b>: <input type="text" id="inDownP"/></p>
-  <p><b>APR (Interest rate)</b>: <input type="text" id="inAPR"/></p>
-  <p><b>Time Period (How many years)</b>: <input type="text" id="inPeriod"/></p>
-  <p><button id="btnCalculate">Calculate Payment!</button></p>
-  <hr/>
+        <div id="inputForm">
 
-  <p><b>Total Monthly Payment: <span id="outMonthly"></span></b></p>
-  <script src="js/debtlift-calc.js"></script>
+            <div id="start_date"><p><label class="form">Start Date (usually today):</label><input type="date" class="textbox" id="startDate"></p></div> <!-- onchange="cal()"-->
+        
+            <div id="freedom_date"><p><label class="form">Desired freedom Date:</label><input type="date" class="textbox" id="freedomDate"></p></div> <!-- onchange="cal()"-->
+        
+            <div id="numdays">Number of days:
+              <div id="numdays2">___</div>
+              </div> <br />
+              <div id="numMonths">Number of months:
+              <div id="numMonths2">___</div>
+                <div id="numYears">Number of years:
+              <div id="numYears2">___</div>
+    <p><b>Loan Amount</b>: <input type="text" id="inAmount"/></p>
+    <p><b>Down Payment</b>: <input type="text" id="inDownP"/></p>
+    <p><b>APR (Interest rate)</b>: <input type="text" id="inAPR"/></p>
+    <!-- <p><b>Time Period (How many years)</b>: <input type="text" id="inPeriod"/></p> -->
+    <p><button id="btnCalculate">Calculate Payment!</button></p>
+    <hr/>
+
+    <p><b>Total Monthly Payment: <span id="outMonthly"></span></b></p>
+    <script src="js/freedom_date.js"></script>
 
     </div>
     <div class="footer">Copyright <a href="https://studiozandra.com">Zandra Kubota</a> 2018<br>

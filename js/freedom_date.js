@@ -27,7 +27,8 @@
 // console.log(yearsOnly + " year(s) and " + remainder + " days have passed."); 
 
 
-
+var currentPaymtEle = document.getElementById('currentPaymt').value;
+var newPymtEle = document.getElementById('newPayment');
 
 function calculateDebtFreedomDate(p, r, n){
 
@@ -38,7 +39,8 @@ function calculateDebtFreedomDate(p, r, n){
 
   }
   
-    var totalDays = GetDays()
+    var totalDays = GetDays();
+
 
     
     var daysDiv = document.getElementById("numdays2");
@@ -71,6 +73,26 @@ function percentToDecimal(percent) {
 function postPayments(payment) {
   var htmlEl = document.getElementById("outMonthly");
   htmlEl.innerText = "$" + payment;
+
+  var diff = payment - currentPaymtEle;
+  
+    if(currentPaymtEle > payment){
+      var goodJobEle = document.createElement('div');
+      goodJobEle.innerHTML = 'Great job on your payments, keep it up!';
+      newPymtEle.appendChild(goodJobEle);
+    }else if(diff > 0){
+      var payMoreEle = document.createElement('div');
+      payMoreEle.innerHTML = 'You need to pay ' + diff + ' more per month if you want to make that date.';
+      newPymtEle.appendChild(payMoreEle);
+  
+    }
+  
+  
+
+
+
+
+
 }
   
 var btn = document.getElementById('btnCalculate');

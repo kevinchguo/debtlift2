@@ -17,7 +17,7 @@
     <div class="menu">
     <br><br>
     <a href="https://dev.studiozandra.com">go to dev.studiozandra</a> </div>
-    <div class="content">Enter your repayment data below:
+    <div class="content">Enter Debt 1 info below:
         <div id="inputForm">
 
             <div id="start_date"><p><label class="form">Start Date (usually today):</label><input type="date" class="textbox" id="startDate"></p></div>
@@ -32,13 +32,16 @@
                 <div id="numYears">Number of years:
               <div id="numYears2">___</div>
     <p><b>Loan Amount</b>: <input type="text" id="inAmount"/></p>
-    <p><b>Down Payment</b>: <input type="text" id="inDownP"/></p>
+    <p><b>Any Down Payment?(enter zero for none)</b>: <input type="text" id="inDownP"/></p>
     <p><b>APR (Interest rate)</b>: <input type="text" id="inAPR"/></p>
+    <p><b>Amount currently repaying per month:</b>: <input type="text" id="currentPaymt"/></p>
     
-    <p><button id="btnCalculate">Calculate Payment!</button></p>
+    <p><button id="btnCalculate">Get Payment!</button></p>
     <hr/>
 
     <p><b>Total Monthly Payment: <span id="outMonthly"></span></b></p>
+    <div id="newPayment"></div>
+
     <script src="js/freedom_date.js"></script>
 
     </div>

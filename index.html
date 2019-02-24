@@ -5,7 +5,7 @@
 
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Debt Calculator App</title>
+  <title>Debt-Free Date Calculator App</title>
   	<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css" /> -->
   	<link href="css/styles.css" rel="stylesheet" />
 
@@ -13,24 +13,31 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">Debt Calculator</div>
+    <div class="header">Debt-Free Date Calculator (JS Practice)</div>
     <div class="menu">
-    <br><br>
-    <a href="https://dev.studiozandra.com">go to dev.studiozandra</a> </div>
+      <br><br>
+      <a href="https://dev.studiozandra.com">go to dev.studiozandra</a> 
+    </div> <!-- end menu div -->
+
     <div class="content">Enter Debt 1 info below:
         <div id="inputForm">
 
-            <div id="start_date"><p><label class="form">Start Date (usually today):</label><input type="date" class="textbox" id="startDate"></p></div>
+          <div id="start_date"><p><label class="form">Start Date (usually today):</label><input type="date" class="textbox" id="startDate"></p></div>
         
-            <div id="freedom_date"><p><label class="form">Desired Debt Freedom Date:</label><input type="date" class="textbox" id="freedomDate"></p></div>
+          <div id="freedom_date"><p><label class="form">Desired Debt Freedom Date:</label><input type="date" class="textbox" id="freedomDate"></p></div>
         
-            <div id="numdays">Number of days:
-              <div id="numdays2">___</div>
-              </div> <br />
-              <div id="numMonths">Number of months:
-              <div id="numMonths2">___</div>
-                <div id="numYears">Number of years:
-              <div id="numYears2">___</div>
+          <div id="numdays">Number of days:
+            <div id="numdays2">___</div>
+          </div> <br />
+              
+          <div id="numMonths">Number of months:
+            <div id="numMonths2">___</div>
+          </div>
+                
+          <div id="numYears">Number of years:
+            <div id="numYears2">___</div>
+          </div>
+
     <p><b>Loan Amount</b>: <input type="text" id="inAmount"/></p>
     <p><b>Any Down Payment?(enter zero for none)</b>: <input type="text" id="inDownP"/></p>
     <p><b>APR (Interest rate)</b>: <input type="text" id="inAPR"/></p>
@@ -42,11 +49,15 @@
     <p><b>Total Monthly Payment: <span id="outMonthly"></span></b></p>
     <div id="newPayment"></div>
 
+    <p>Potential side gigs adapted from https://thecollegeinvestor.com/14608/make-money-fast-side-hustling/</p>
+
     <script src="js/freedom_date.js"></script>
 
     </div>
-    <div class="footer">Copyright <a href="https://studiozandra.com">Zandra Kubota</a> 2018<br>
+    <div class="footer">Copyright <a href="https://studiozandra.com">Zandra Kubota</a> 2018<br></div>
   </div>
-  </div>
+
+</div> <!-- end container div -->
+
 </body>
 </html>

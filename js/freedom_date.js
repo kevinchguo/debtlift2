@@ -84,13 +84,14 @@ function postPayments(payment) {
       var payMoreEle = document.createElement('div');
       payMoreEle.innerHTML = 'You need to pay ' + diff + ' more per month if you want to make that date.';
       newPymtEle.appendChild(payMoreEle);
-  
+
+      var payOptionEle = document.createElement('div');
+      payOptionEle.innerHTML = "That's " + diff / 5 + " hours of doing online surveys, " + diff / 10 + " hours of teaching English online, or " + diff / 9 + " hours of working at Burger King.";
+      payMoreEle.appendChild(payOptionEle);
+
     }
   
   
-
-
-
 
 
 }

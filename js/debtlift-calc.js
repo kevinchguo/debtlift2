@@ -1,4 +1,4 @@
-//DebtLift calculation
+//DebtLift calculation, this is the old app
 
 //Formula: c = (r * p) / (1 - (Math.pow((1 + r), (-n ))))
 // Math.pow is exponent, 1+r raised to -n power
@@ -7,7 +7,7 @@
 // n term or period in years
 // test: alert("In debtlift.js")
 
-function calculateMortgage(p, r, n){
+function calculateDebtFreedomDate(p, r, n){
   //convert this percent to decimal
   r = percentToDecimal(r);
 
@@ -52,7 +52,7 @@ btn.onclick = function() {
   var term = document.getElementById("inPeriod").value;
   var amountBorrowed = loan - downPayment;
 
-  var monthlyPmt = calculateMortgage(amountBorrowed, interest, term);
+  var monthlyPmt = calculateDebtFreedomDate(amountBorrowed, interest, term);
 
   postPayments(monthlyPmt);
 }

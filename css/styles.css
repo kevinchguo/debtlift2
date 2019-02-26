@@ -6,7 +6,7 @@
     grid-template-rows: 50px 350px 50px; */
     grid-template-areas:
       "h h h h h h h h h h h h"
-      "m m c c c c c c c c c c"
+      "m m c c c c d d d d d d"
       "f f f f f f f f f f f f";
     font-family: verdana;
   }
@@ -36,6 +36,12 @@
     /* text-align: center; */
     color: #14141f;
     padding: 1%;
+  }
+
+
+  #numdays, #numMonths, #numYears{
+    color: grey;
+    border: 1px dotted seagreen; 
   }
 
   #inputForm, #newPayment {

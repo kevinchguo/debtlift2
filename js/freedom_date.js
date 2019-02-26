@@ -41,8 +41,6 @@ function calculateDebtFreedomDate(p, r, n){
   
     var totalDays = GetDays();
 
-
-    
     var daysDiv = document.getElementById("numdays2");
     daysDiv.innerHTML = totalDays
     var monthsDiv = document.getElementById("numMonths2");
@@ -65,6 +63,7 @@ function calculateDebtFreedomDate(p, r, n){
   
 function percentToDecimal(percent) {
   return (percent/12)/100;
+
 }
   
   
@@ -75,26 +74,24 @@ function postPayments(payment) {
   htmlEl.innerText = "$" + payment;
 
   var diff = payment - currentPaymtEle;
-  
-    if(currentPaymtEle > payment){
-      var goodJobEle = document.createElement('div');
-      goodJobEle.innerHTML = 'Great job on your payments, keep it up!';
-      newPymtEle.appendChild(goodJobEle);
-    }else if(diff > 0){
-      var payMoreEle = document.createElement('div');
-      payMoreEle.innerHTML = 'You need to pay ' + diff + ' more per month if you want to make that date.';
-      newPymtEle.appendChild(payMoreEle);
+  console.log(diff);
+  if(currentPaymtEle > payment){
+    var goodJobEle = document.createElement('div');
+    goodJobEle.innerHTML = 'Great job on your payments, keep it up!';
+    newPymtEle.appendChild(goodJobEle);
+  }else if(diff > 0){
+    var payMoreEle = document.createElement('div');
+    payMoreEle.innerHTML = 'You need to pay ' + diff + ' more per month if you want to make that date.';
+    newPymtEle.appendChild(payMoreEle);
 
-      var payOptionEle = document.createElement('div');
-      payOptionEle.innerHTML = "That's " + diff / 5 + " hours of doing online surveys, " + diff / 10 + " hours of teaching English online, or " + diff / 9 + " hours of working at Burger King.";
-      payMoreEle.appendChild(payOptionEle);
+    var payOptionEle = document.createElement('div');
+    payOptionEle.innerHTML = "That's " + diff / 5 + " hours of doing online surveys, " + diff / 10 + " hours of teaching English online, or " + diff / 9 + " hours of working at Burger King.";
+    payMoreEle.appendChild(payOptionEle);
 
-    }
-  
-  
-
-
+  }
 }
+
+
   
 var btn = document.getElementById('btnCalculate');
 btn.onclick = function() {

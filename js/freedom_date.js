@@ -28,16 +28,19 @@
 
 
 var currentPaymtEle = document.getElementById('currentPaymt').value;
-var newPymtEle = document.getElementById('newPayment');
+// var newPymtEle = document.getElementById('newPayment');
+
+
+function GetDays(){
+  var freeDt = new Date(document.getElementById("freedomDate").value);
+  var startDt = new Date(document.getElementById("startDate").value);
+  return parseInt((freeDt - startDt) / (1000 * 60 * 60 * 24));
+
+}
+GetDays();
+console.log(GetDays());
 
 function calculateDebtFreedomDate(p, r, n){
-
-  function GetDays(){
-    var freeDt = new Date(document.getElementById("freedomDate").value);
-    var startDt = new Date(document.getElementById("startDate").value);
-    return parseInt((freeDt - startDt) / (1000 * 60 * 60 * 24));
-
-  }
   
     var totalDays = GetDays();
 
@@ -70,44 +73,40 @@ function percentToDecimal(percent) {
   
   // postPayments will post result to the html page
 function postPayments(payment) {
-  var htmlEl = document.getElementById("outMonthly");
-  htmlEl.innerText = "$" + payment;
+  var totalSpanEle = document.getElementById("outMonthly");
+  totalSpanEle.innerText = "$" + payment;
 
   var diff = payment - currentPaymtEle;
   console.log(diff);
   if(currentPaymtEle > payment){
-    var goodJobEle = document.createElement('div');
-    goodJobEle.innerHTML = 'Great job on your payments, keep it up!';
-    newPymtEle.appendChild(goodJobEle);
+    var goodJobEle = document.getElementById('goodJob');
+    goodJobEle.innerText = "Great job on your payments, keep it up!";
+    
   }else if(diff > 0){
-    var payMoreEle = document.createElement('div');
-    payMoreEle.innerHTML = 'You need to pay ' + diff + ' more per month if you want to make that date.';
-    newPymtEle.appendChild(payMoreEle);
+    var payMoreEle = document.getElementById('payMore');
+    payMoreEle.innerText = 'You need to pay ' + diff + ' more per month if you want to make that date.';
 
-    var payOptionEle = document.createElement('div');
-    payOptionEle.innerHTML = "That's " + diff / 5 + " hours of doing online surveys, " + diff / 10 + " hours of teaching English online, or " + diff / 9 + " hours of working at Burger King.";
-    payMoreEle.appendChild(payOptionEle);
+    var gigOptionEle = document.getElementById('gigOptions');
+    gigOptionEle.innerText = "That's " + diff / 5 + " hours of doing online surveys, " + diff / 10 + " hours of teaching English online, or " + diff / 9 + " hours of working at Burger King.";
 
   }
 }
 
+var loan = document.getElementById("inAmount").value;
+  var downPayment = document.getElementById("inDownP").value;
+  var interest = document.getElementById("inAPR").value;
+  var amountBorrowed = loan - downPayment;
+  console.log(amountBorrowed + "amountBorrowed")
 
   
 var btn = document.getElementById('btnCalculate');
 btn.onclick = function() {
-  var loan = document.getElementById("inAmount").value;
-  var downPayment = document.getElementById("inDownP").value;
-  var interest = document.getElementById("inAPR").value;
+  console.log(loan + "LOAN");
 
-  
-  var freeDt = new Date(document.getElementById("freedomDate").value);
-  var startDt = new Date(document.getElementById("startDate").value);
-  var day = parseInt((freeDt - startDt) / (1000 * 60 * 60 * 24));
-  var Years = day / 365;
+  var Years = GetDays() / 365;
 
   var term = Years;
-  // console.log(term);
-  var amountBorrowed = loan - downPayment;
+
     if (loan == "") {
       alert("Invalid loan amount");
   
@@ -117,12 +116,24 @@ btn.onclick = function() {
       alert("Invalid loan amount");
   
     }
+
+    if (downPayment >= loan) {
+      alert("Downpayment should be smaller than loan");
+  
+    }
+
+    if (currentPaymtEle >= loan) {
+      alert("Current payment should be smaller than loan");
+  
+    }
   
     
   
     var monthlyPmt = calculateDebtFreedomDate(amountBorrowed, interest, term);
   
+    
     postPayments(monthlyPmt);
   }
 
+  
 
